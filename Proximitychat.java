@@ -1,3 +1,8 @@
+/**
+ * Author: Michael Barcelo (Money Shark)
+ * Purpose: Enable a proximity chat for non-moderation users within the Minecraft Server.
+ */
+
 package me.michaelbarcelo.proximitychat;
 
 import org.bukkit.entity.Player;
@@ -15,7 +20,13 @@ public final class Proximitychat extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(this, this);
     }
 
-    public static boolean isPlayerInGroup(Player player, String group) {
+    /**
+     * Returns a boolean after checking if a user is in a specific permission group
+     * @param player : the player object you want to check
+     * @param group : the group that your checking against
+     * @return : a boolean
+     */
+    private static boolean isPlayerInGroup(Player player, String group) {
         return player.hasPermission("group." + group);
     }
 
